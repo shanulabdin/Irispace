@@ -27,7 +27,6 @@ mate{
 
 body{
   display: flex;
-  justify-content: center;
   align-items: center;
   background-color: #6130BC;
 }
@@ -40,6 +39,7 @@ body{
   justify-content: center;
   align-items: center;
   top: -100px;
+  left: -100px;
   
 }
 .toggle {
@@ -106,8 +106,8 @@ body{
 
 .navbar.active .items li {
   transform:  translate(-50%, -50%)
-              rotate(calc(360deg / 6 * var(--i)))
+              rotate(calc(360deg / 12 * var(--i)))
               translate(120px)
-              rotate(calc(-360deg / 6 * var(--i)));
+              rotate(calc(-360deg / 12 * var(--i)));
   opacity: 1;
 }
