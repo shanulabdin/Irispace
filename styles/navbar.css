@@ -1,46 +1,14 @@
-glow{
-  color: #2B1464;
-  color: #6130BC;
-  color: #CC77F9;
-  color: #1D0C43;
-  color: #A999F4;
-}
-neon{
-  color: #4C5DD7;
-  color: #260B68;
-  color: #C231C9;
-  color: #1D0225;
-  color: #68A2EB;
-}
-mate{
-  color: #1c202c;
-  color: #60519b;
-  color: #31323e;
-  color: #bfc0d1;
-  
-  
-  color: #1e202c;
-  color: #60519b;
-  color: #31323e;
-  color: #bfc0d1;
-}
-
-body{
-  display: flex;
-  align-items: center;
-  background-color: #6130BC;
-}
-
 .navbar {
-  position: relative;
-  width: 300px;
-  height: 300px;
+  position: sticky;
+  width: 100px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  top: -100px;
-  left: -100px;
-  
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
 }
 .toggle {
   position: absolute;
@@ -52,7 +20,7 @@ body{
   justify-content: center;
   align-items: center;
   font-size: 2rem;
-  color: #6130BC;
+  color: rgb(97, 48, 188);
   cursor: pointer;
   transition: 0.5s;
   z-index: 10;
@@ -106,8 +74,62 @@ body{
 
 .navbar.active .items li {
   transform:  translate(-50%, -50%)
-              rotate(calc(360deg / 12 * var(--i)))
+              rotate(calc(360deg / 6 * var(--i)))
               translate(120px)
-              rotate(calc(-360deg / 12 * var(--i)));
+              rotate(calc(-360deg / 6 * var(--i)));
   opacity: 1;
 }
+/* .navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.toggle {
+
+}
+.toggle:hover{
+
+}
+.toggle.active{
+
+}
+.items{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type:none;
+  margin: 50px 0 0 0;
+}
+
+.items li{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 100px 0 0;
+  font-size: 25px;
+  marker: none;
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  background-color: rgb(97, 48, 188);
+  transition: 0.3s;
+
+}
+.items li:hover{
+  background-color: white;
+  
+}
+
+.items li a{
+  color: white;
+  transition: 0.3s;
+}
+.items li a:hover{
+  color: rgb(97, 48, 188);
+
+}
+
+.navbar.active .items li {
+
+} */

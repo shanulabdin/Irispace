@@ -1,0 +1,38 @@
+/* -------- Base reset & typography -------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  background: rgb(0, 0, 0);
+  color: #e6ebf1;
+  font: 16px/1.45 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+  isolation: isolate; /* prevents blend issues between layers */
+}
+
+/* -------- Theme variables (shared) -------- */
+:root {
+  /* Navbar sizing (adjust to match your final navbar) */
+  --nav-h: 64px;
+
+  /* Grid/glow theme */
+  --gap: 8px;
+  --cell-bg: #000000;           /* must be OPAQUE so glow hides under cells */
+  --page-bg: rgba(97, 48, 188, 0.1);
+  --glow-color: 97, 48, 188;    /* RGB only; change to recolor */
+  --glow-size: 300px;
+}
+
+/* -------- Main layout reserved space (top navbar) -------- */
+body.layout-topnav main {
+  padding-top: var(--nav-h);                 /* keeps main below navbar */
+  min-height: calc(100dvh - var(--nav-h));   /* full viewport height */
+}
+
+/* If you ever switch to a left sidebar nav, you could use:
+body.layout-sidenav main { padding-left: var(--nav-w); min-height: 100dvh; }
+and define --nav-w in :root.
+*/

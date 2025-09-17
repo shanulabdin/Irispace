@@ -1,59 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/general.css">
   <link rel="stylesheet" href="styles/navbar.css">
+  <link rel="stylesheet" href="styles/main.css">
+
   <title>IRISPACE - Studio</title>
 
   <!-- Ionicons -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
-<body>
-  
+<body class="layout-topnav">
   <nav class="navbar">
-    <!-- Toggle -->
-    <div class="toggle">
+    <div class="toggle" aria-label="Toggle menu">
       <ion-icon name="add"></ion-icon>
     </div>
 
-
     <ul class="items">
-      <!-- Message / Chat -->
-      <li style="--i:0">
-        <a href="#">
-          <ion-icon name="chatbubble"></ion-icon>
-        </a>
-      </li>
-
-      <!-- Settings / Gear -->
-      <li style="--i:1">
-        <a href="#">
-          <ion-icon name="settings"></ion-icon>
-        </a>
-      </li>
-
-      <!-- Camera -->
-      <li style="--i:2">
-        <a href="#">
-          <ion-icon name="home"></ion-icon>
-        </a>
-      </li>
-
-      <!-- Video -->
-      <li style="--i:3">
-        <a href="#">
-          <ion-icon name="videocam"></ion-icon>
-        </a>
-      </li>
+      <li style="--i:2"><a href="#"><ion-icon name="home"></ion-icon></a></li>
+      <li style="--i:3"><a href="#"><ion-icon name="videocam"></ion-icon></a></li>
+      <li style="--i:1"><a href="#"><ion-icon name="settings"></ion-icon></a></li>
+      <li style="--i:0"><a href="#"><ion-icon name="chatbubble"></ion-icon></a></li>
     </ul>
   </nav>
 
-    <!-- Ionicons -->
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <main>
+    <div class="wrap">
+      <div class="hero">
+        <div class="slogan">
+          <h1>We Help Brands to Grow Faster!</h1>
+          <p>360° brilliance in marketing and design - where your brand's story becomes unforgettable!</p>
+        </div>
+
+        <div class="grid" id="grid">
+          <!-- Make as many cells as you want -->
+          <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+          <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+          <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+          <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+          <div class="cell"></div><div class="cell"></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Scripts -->
   <script src="scripts/navbar.js"></script>
+  <script src="scripts/main.js"></script>
 </body>
 </html>
