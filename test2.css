@@ -1,0 +1,136 @@
+/* 1) Design tokens */
+:root{
+  --bg: rgb(15, 23, 42);        /* slate-900-ish */
+  --panel: rgb(17, 24, 39);     /* gray-900-ish */
+  --text: rgb(229, 231, 235);      /* gray-200 */
+  --muted: rgb(148, 163, 184);     /* slate-400 */
+  --accent: rgb(96, 165, 250);    /* blue-400 */
+  --radius: 12px;
+  --maxw: 1100px;
+  --space: 16px;
+}
+
+/* 2) Base */
+*{ 
+  box-sizing: border-box; 
+}
+html, body{ 
+  height:100%; 
+}
+body{
+  margin:0; 
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  line-height:1.6; 
+  color:var(--text); 
+  background: radial-gradient(1200px 600px at 10% 0%, #1f2937 0, transparent 60%), var(--bg);
+}
+img{ 
+  max-width:100%; 
+  display:block; 
+}
+
+a{ 
+  color:var(--acc
+  
+  ent); 
+  text-decoration:none; 
+}
+a:hover{ 
+  text-decoration:underline; 
+}
+
+h1,h2,h3{ 
+  line-height:1.2; 
+  margin:0 0 calc(var(--space) * .5); 
+}
+
+/* 3) Layout helpers */
+.container{ 
+  width:100%; 
+  max-width:var(--maxw); 
+  margin:0 auto; 
+  padding: 0 calc(var(--space) * 1.25); 
+}
+.section{ 
+  padding: calc(var(--space) * 3) 0; 
+}
+.stack > * + *{ 
+  margin-top: var(--space); 
+}
+.grid-3{ 
+  display:grid; 
+  gap: var(--space); 
+  grid-template-columns: 1fr; 
+}
+@media (
+  min-width: 900px){ .grid-3{ 
+  grid-template-columns: repeat(3, 1fr); 
+}
+}
+
+/* 4) Components */
+.site-header{
+  position:sticky; 
+  top:0; 
+  z-index:10; 
+  backdrop-filter: blur(6px);
+  background: color-mix(in oklab, var(--bg), transparent 35%);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.site-header .container{ 
+  display:flex; 
+  align-items:center; 
+  justify-content:space-between; 
+  padding: calc(var(--space) * .875) calc(var(--space) * 1.25); 
+}
+.logo{ 
+  font-weight:700; 
+  letter-spacing:.3px; 
+}
+.nav a{ 
+  margin-left: var(--space); 
+}
+.btn{
+  display:inline-block; 
+  padding: .7em 1em; 
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--accent), color-mix(in oklab, var(--accent), #000 20%));
+  color:#001018; 
+  font-weight:600; 
+  border:none;
+}
+.btn:hover{ 
+  filter: brightness(1.05); 
+  text-decoration:none; }
+
+.hero{
+  padding: calc(var(--space) * 4) 0 calc(var(--space) * 3);
+  text-align:center;
+}
+.hero h1{ 
+  font-size: clamp(28px, 5vw, 48px); 
+}
+.hero p{ 
+  color:var(--muted); 
+  margin-bottom: var(--space); }
+
+.card{
+  background: linear-gradient(180deg, color-mix(in oklab, var(--panel), #fff 2%), var(--panel));
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: var(--radius); 
+  padding: calc(var(--space) * 1.25);
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+.card h3{ 
+  margin-bottom: .25rem; 
+}
+.card p{ 
+  color:var(--muted); 
+}
+
+.site-footer{ 
+  padding: calc(var(--space) * 2) 0; 
+  border-top:1px solid rgba(255,255,255,.06); 
+  color:var(--muted); 
+}

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My First Site</title>
+  <link rel="stylesheet" href="test2.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="#">MySite</a>
+      <nav class="nav">
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a class="btn" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Build something simple that works</h1>
+        <p>Keep your scope tiny. Ship. Then polish.</p>
+        <a class="btn" href="#features">See features</a>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="container grid-3">
+        <article class="card">
+          <h3>Fast</h3>
+          <p>No frameworks, no build step—just clean HTML/CSS.</p>
+        </article>
+        <article class="card">
+          <h3>Responsive</h3>
+          <p>Mobile-first layout with simple grid utilities.</p>
+        </article>
+        <article class="card">
+          <h3>Accessible</h3>
+          <p>Semantic tags, good contrast, and focus styles.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About</h2>
+        <p>This is my first website. I’m keeping it small so I can finish it and learn.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <form class="stack" onsubmit="event.preventDefault(); alert('Submitted!');">
+          <label>
+            <span>Name</span>
+            <input type="text" required />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" required />
+          </label>
+          <label>
+            <span>Message</span>
+            <textarea rows="4" required></textarea>
+          </label>
+          <button class="btn" type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© 2025 Me. Built with love & restraint.</small>
+    </div>
+  </footer>
+</body>
+</html>
