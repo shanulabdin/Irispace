@@ -4,8 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Navbar - Responsive</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  
+
+  <button id="open-sidebar-button" onclick="openSidebar()">
+    <ion-icon name="menu" height="40px"></ion-icon>
+  </button>
+
+  <nav>
+    <ul>
+      <li><button id="close-sidebar-button" onclick="closeSidebar()"></button></li>
+      <li class="home-li"><a class="active-link" href="home.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a class="accent-link" href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Accessible Navbar</h1>
+    <p>This is a simple responsive navbar with accessible features.</p>
+    <p>Resize the browser window to see the responsive behavior.</p>
+  </main>
+
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
