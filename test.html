@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    *,
+    *::before,
+    *::after{
+      box-sizing: border-box;
+    }
+
+    :root{
+  --x: 0;
+  --y: 0;
+  --xp: 0;
+  --yp: 0;
+  --hue: calc(0 + var(--xp) * 500);
+  --bg: hsl(0 0% 10%);
+  --size: 100px;
+  --glow: radial-gradient(50% 50% at center,
+          #6130BC,
+          #6130BC,
+           transparent)
+
+          calc((var(--x) * 1px) - (var(--size) * 0.5))
+          calc((var(--y) * 1px ) - (var(--size) * 0.5))
+          / var(--size) var(--size) no-repeat fixed;
+
+  /* --glow: radial-gradient(50% 50% at center,
+            hsl(var(--hue) 80% 85%),
+            hsl(var(--hue) 80% 70%),
+            transparent)
+            
+            /* center the circle at the pointer */
+          /* calc((var(--x) * 1px) - (var(--size) * 0.5))
+          calc((var(--y) * 1px) - (var(--size) * 0.5))
+          / var(--size) var(--size) no-repeat fixed; */ 
+}
+
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      place-items: center;
+      background: var(--bg);
+      font-family: Arial, sans-serif;
+    }
+
+    button {
+      position: relative;
+      padding: 1rem 2rem;
+      border-radius: 0.1rem;
+      font-weight: 700;
+      letter-spacing: 0.1ch;
+      cursor: pointer;
+      border: 4px solid transparent;   /* lets us do a gradient border trick */
+      box-shadow: 0 1px hsl(0 0% 100% / 0.15) inset;
+      background:
+        /* 1) the solid button fill */
+        linear-gradient(var(--bg), var(--bg)) padding-box,
+
+        /* 2) the moving glow */
+        var(--glow),
+
+        /* 3) a dark “border” gradient behind the transparent border */
+        linear-gradient(black, black) border-box;
+
+      transition: background-size 0.24s;
+      touch-action: none; /* better touch pointer tracking (no accidental scrolling) */
+    }
+
+    button::before {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: 0.1rem;
+  background: var(--bg);
+  box-shadow: 0 1px hsl(0 0% 100% / 0.15) inset;
+  z-index: 2; /* sits above background layers, below the text */
+}
+
+button::after {
+  content: "";
+  position: absolute; inset: -4px;
+  border-radius: 1rem;
+  background: var(--glow);
+  border: 4px solid transparent;
+  filter: blur(20px);   /* the soft outer glow */
+}
+
+button span {
+  position: relative; z-index: 3;
+  background: var(--glow), rgb(97, 48, 188);  /* glow + fallback */
+  background-clip: text;
+  color: rgba(97, 48, 188, 0.1);              /* show only the background through letters */
+}
+
+:root:has(button:active) { --size: 300px; }
+
+button:focus-visible { outline: 2px solid white; outline-offset: 2px; }
+
+
+
+  </style>
+</head>
+<body>
+  <nav>
+    <button><span>Subscribe</span></button>
+    <button><span>Youtube</span></button>
+  </nav>
+
+  <script>
+    const syncPointer = ({ x: pointerX, y: pointerY }) => {
+      const x = pointerX.toFixed(2);
+      const y = pointerY.toFixed(2);
+      const xp = (pointerX / window.innerWidth).toFixed(2);
+      const yp = (pointerY / window.innerHeight).toFixed(2);
+
+      const root = document.documentElement.style;
+      root.setProperty('--x', x);
+      root.setProperty('--y', y);
+      root.setProperty('--xp', xp);
+      root.setProperty('--yp', yp);
+    };
+
+    document.body.addEventListener('pointermove', syncPointer, { passive: true });
+
+    
+  </script>
+</body>
+</html>

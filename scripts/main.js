@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Smooth follow (tweak ease: 1 = snap; lower = more trail)
   let tx = 0, ty = 0, cx = 0, cy = 0;
-  const ease = 0.08;
+  const ease = 0.99;
 
   function tick() {
     cx += (tx - cx) * ease;
