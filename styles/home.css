@@ -6,7 +6,7 @@
   display: grid;
   gap: 0.3rem;
   grid-template-columns: repeat(16, minmax(35px, 1fr));
-  margin-top: 2rem;
+  margin-top: -1rem;
 }
 
 /* Square behavior: each item stays a square no matter the screen size */
@@ -17,6 +17,7 @@
   aspect-ratio: 1 / 1;       /* <- ensures squares */
   
   transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease;
+  border-radius: 0.5em;
 }
 
 /* Hover/focus states */
@@ -33,5 +34,10 @@
   transition-delay: 320ms; /* wait 120ms before returning */
 }
 
+.grid-item-focus {
+  background: var(--surface-color, rgba(177, 9, 255, 1));
+  transform: translateY(-6px) scale(1.1);
+  box-shadow: 0 8px 28px rgba(177, 9, 255, 0.9);
 
-
+  transition-delay: 0s;
+}
