@@ -1,0 +1,33 @@
+.grid {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(8, minmax(70px, 1fr));
+  margin-top: 2rem;
+}
+
+/* Square behavior: each item stays a square no matter the screen size */
+.grid-item {
+  background: var(--surface-color, #151724);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 0px;
+  aspect-ratio: 1 / 1;       /* <- ensures squares */
+  
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+/* Hover/focus states */
+.grid-item:hover {
+  background: var(--surface-color, #151724);
+  transform: translateY(-6px) scale(1.1);
+  box-shadow: 0 8px 28px rgba(177, 9, 255, 0.192);
+
+  transition-delay: 0s; /* start immediately */
+}
+
+/* After hover (leave): delay before resetting */
+.grid-item {
+  transition-delay: 320ms; /* wait 120ms before returning */
+}
+
+
+
