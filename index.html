@@ -7,8 +7,8 @@
   <link rel="stylesheet" href="styles/style.css">
   <link rel="stylesheet" href="styles/navbar.css">
   <link rel="stylesheet" href="styles/home.css">
-  <script src="scripts/script.js" defer></script>
   <script src="scripts/home.js" defer></script>
+  <script src="scripts/navbar.js" defer></script>
 </head>
 <body>
 
@@ -18,20 +18,15 @@
   </button>
 
   <!-- Sidebar nav -->
-  <nav id="navbar">
-    <div class="button-container">
-      <!-- <li>
-        <button id="close-sidebar-button" onclick="closeSidebar()">
-          <ion-icon class="nav-icons" name="close"></ion-icon>
-        </button>
-      </li> -->
-      
-      <button class="btn"><a class="link-btn" href="#home">Home</a></button>
-      <button class="btn"><a class="link-btn" href="#about">About</a></button>
-      <button class="btn"><a class="link-btn" href="#services">Services</a></button>
-      <button class="btn"><a class="link-btn" href="#contact">Contact</a></button>
-    </div>
-  </nav>
+<nav id="navbar">
+  <div class="button-container">
+    <a class="btn nav-btn-js" href="#home">Home</a>
+    <a class="btn nav-btn-js" href="#about">About</a>
+    <a class="btn nav-btn-js" href="#services">Services</a>
+    <a class="btn nav-btn-js" href="#contact">Contact</a>
+  </div>
+</nav>
+
 
 
   <!-- Overlay -->
