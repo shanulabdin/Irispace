@@ -1,25 +1,29 @@
+#home{
+  margin-left: 160px
+}
+
 .grid {
   display: grid;
-  gap: 0.7rem;
-  grid-template-columns: repeat(8, minmax(70px, 1fr));
+  gap: 0.3rem;
+  grid-template-columns: repeat(16, minmax(35px, 1fr));
   margin-top: 2rem;
 }
 
 /* Square behavior: each item stays a square no matter the screen size */
 .grid-item {
-  background: var(--surface-color, #151724);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--primary-color, #151724);
+  border: 1px solid var(--border-color, rgba(255,255,255,0.08));
   border-radius: 0px;
   aspect-ratio: 1 / 1;       /* <- ensures squares */
   
-  transition: transform 200ms ease, box-shadow 200ms ease;
+  transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease;
 }
 
 /* Hover/focus states */
 .grid-item:hover {
-  background: var(--surface-color, #151724);
+  background: var(--surface-color, rgba(177, 9, 255, 1));
   transform: translateY(-6px) scale(1.1);
-  box-shadow: 0 8px 28px rgba(177, 9, 255, 0.192);
+  box-shadow: 0 8px 28px rgba(177, 9, 255, 0.9);
 
   transition-delay: 0s; /* start immediately */
 }

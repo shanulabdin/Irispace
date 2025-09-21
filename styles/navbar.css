@@ -1,18 +1,19 @@
 #navbar{
-  padding: 1rem 2rem;
+  /* padding: 1rem 2rem; */
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   z-index: 1;
   
-  background-color: #161616;
+  background-color: var(--primary-color);
   overflow: hidden;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
   
+  border-right: 1px solid var(--border-color);
 }
 
 .button-container{
@@ -22,7 +23,7 @@
   flex-direction: column;
   
 
-  background: #161616;
+  background: var(--primary-color);
   overflow: hidden;
   padding: 1rem;
 }
@@ -51,7 +52,7 @@
   position: absolute;
   inset: 3px;
   
-  background-color: #161616;
+  background-color: var(--primary-color);
 
   border-radius: inherit;
   z-index: -1;
@@ -93,25 +94,12 @@
   background: transparent;
 }
 
-/*
-    top: -2px;
-    left: -2px;
-    z-index: -1;
-    
-    border-radius: 10px;
-    opacity: 0;
-    
-}
-
-*/
 
 #navbar a{
   text-decoration: none;
   color: var(--text-color);
   margin: 0 1rem;
 }
-
-
 
 #open-sidebar-button{
   display: none;
