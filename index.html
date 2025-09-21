@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar - Responsive</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="scripts/script.js" defer></script>
+</head>
+<body>
+
+  <!-- Open sidebar button -->
+  <button id="open-sidebar-button" onclick="openSidebar()">
+    <ion-icon class="nav-icons" name="menu"></ion-icon>
+  </button>
+
+  <!-- Sidebar nav -->
+  <nav id="navbar">
+    <ul>
+      <li>
+        <button id="close-sidebar-button" onclick="closeSidebar()">
+          <ion-icon class="nav-icons" name="close"></ion-icon>
+        </button>
+      </li>
+      
+      <li><a class="link-btn" href="#home">Home</a></li>
+      <li><a class="link-btn" href="#about">About</a></li>
+      <li><a class="link-btn" href="#services">Services</a></li>
+      <li><a class="link-btn" href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- Overlay -->
+  <div id="overlay" onclick="closeSidebar()"></div>
+
+  <!-- Main content -->
+  <main>
+    <section id="home">
+      <h2>home</h2>
+      <p>This example demonstrates a responsive and accessible navigation bar using HTML, CSS, and JavaScript.</p>
+      <p>The navbar is designed to be user-friendly and works well on both desktop and mobile devices.</p>
+    </section>
+
+    <section id="services">
+      <h2>services</h2>
+      <ul>
+        <li>Responsive design</li>
+        <li>Keyboard navigable</li>
+        <li>Focus management</li>
+      </ul>
+    </section>
+
+    <section id="about">
+      <h2>about</h2>
+      <p>To get started, simply click on the menu icon to open the sidebar navigation. You can close it by clicking the close icon or anywhere outside the sidebar.</p>
+      <p>Feel free to explore the links and see how the navbar adapts to different screen sizes.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>If you have any questions or feedback, please don't hesitate to reach out. We're here to help!</p>
+      <p>Email:</p>
+    </section>
+  </main>
+
+  <!-- Ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
