@@ -71,12 +71,11 @@
   z-index: -2;
   width: calc(100% + 2px);
   height: calc(100% + 2px);
-  filter: blur(2px);
+  filter: blur(1px);
 
   transition: opacity .3s ease-in-out;
-  border-radius: 14px;
   opacity: 0;
-  animation: glowing 20s linear infinite;
+  animation: none;
 }
 
 @keyframes glowing{
@@ -86,12 +85,15 @@
 }
 #navbar .btn:hover::before{
   opacity: 1;
+  animation: glowing 20s linear infinite;
 }
 #navbar .btn:active::after{
   background: transparent;
+
 }
 #navbar .btn.nav-btn-active::before{
   opacity: 1;
+  animation: glowing 20s linear infinite;
 }
 #navbar .btn.nav-btn-active::after{
   background: transparent;

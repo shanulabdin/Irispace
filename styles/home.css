@@ -4,7 +4,7 @@
 
 .grid {
   display: grid;
-  gap: 0.3rem;
+  gap: clamp(4px, 0.5vw, 12px);
   grid-template-columns: repeat(16, minmax(35px, 1fr));
   margin-top: -1rem;
 }
@@ -13,11 +13,10 @@
 .grid-item {
   background: var(--primary-color, #151724);
   border: 1px solid var(--border-color, rgba(255,255,255,0.08));
-  border-radius: 0px;
+  border-radius: 12%;
   aspect-ratio: 1 / 1;       /* <- ensures squares */
   
   transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease;
-  border-radius: 0.5em;
 }
 
 /* Hover/focus states */
