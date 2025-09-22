@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
 :root{
   --primary-color: #11121a;
   --hover-color: #272832;
@@ -12,7 +14,7 @@
   box-sizing: border-box;
 }
 html{
-  font-family: Arial;
+  font-family: Outfit, sans-serif;
   color: var(--text-color);
   scroll-behavior: smooth;
   scroll-padding-top: var(--nav-height);
@@ -26,7 +28,9 @@ body{
 section{
   padding-top: var(--nav-height);
   margin-bottom: 5em;
+  margin-left: 160px
 }
+
 
 main{
   padding: min(5em, 7%);

@@ -1,7 +1,3 @@
-#home{
-  margin-left: 160px
-}
-
 .grid {
   display: grid;
   gap: clamp(4px, 0.5vw, 12px);
