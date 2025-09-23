@@ -28,14 +28,14 @@ body{
 section{
   padding-top: var(--nav-height);
   margin-bottom: 5em;
-  margin-left: 160px
-}
-
-
-main{
+  margin-left: 160px;
   padding: min(5em, 7%);
-  padding-top: var(--nav-height);
 }
+
+
+/* main{
+  padding-top: var(--nav-height);
+} */
 
 main p{
   margin-top: .35em;

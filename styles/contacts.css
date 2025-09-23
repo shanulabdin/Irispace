@@ -5,7 +5,9 @@
   min-height: 30vh; 
   margin: 0; 
   display: grid; 
-  place-items: center; 
+  place-items: center;
+  
+  margin-left: min(7em, 7%);
 }
 
 .social-list { 

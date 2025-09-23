@@ -4,6 +4,7 @@
 }
 #skills {
   margin: 0;
+  margin-left: min(7em, 7%);
   min-height: 80vh;
   min-height: 80dvh;
   display: flex;
