@@ -1,0 +1,104 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
+
+
+#contacts { 
+  min-height: 30vh; 
+  margin: 0; 
+  display: grid; 
+  place-items: center; 
+}
+
+.social-list { 
+  list-style: none; 
+  display: flex; 
+  gap: 24px; 
+  padding: 0; 
+  margin: 0; 
+}
+
+/* List item */
+.social-item { position: relative; }
+
+/* Links */
+.social-link {
+  text-decoration: none;
+  position: relative;
+  display: block;
+  width: 76px;
+  height: 76px;
+  border-radius: 16px;
+}
+
+/* Layer backgrounds */
+.social-layer {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: rgba(255,255,255,.08);
+  transition: transform .45s ease, opacity .3s ease, background .3s ease;
+  transform: translate(0,0) translateZ(0);
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,.35));
+}
+
+/* The actual FA icon */
+.social-icon {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,.35);
+  transition: transform .45s ease;
+}
+
+/* Hover transforms */
+.social-item:hover .social-layer:nth-of-type(1){ transform: translate(0px,-10px) translateZ(10px); }
+.social-item:hover .social-layer:nth-of-type(2){ transform: translate(0px,-20px) translateZ(20px); }
+.social-item:hover .social-layer:nth-of-type(3){ transform: translate(0px,-30px) translateZ(30px); }
+.social-item:hover .social-layer:nth-of-type(4){ transform: translate(0px,-40px) translateZ(40px); }
+
+.social-item:hover .social-icon {
+  transform: translate(0px, -40px) translateZ(40px);
+}
+
+/* Layer opacities */
+.social-link .social-layer:nth-of-type(1){ opacity:.2; }
+.social-link .social-layer:nth-of-type(2){ opacity:.4; }
+.social-link .social-layer:nth-of-type(3){ opacity:.6; }
+.social-link .social-layer:nth-of-type(4){ opacity:.8; }
+
+/* Gradients per platform */
+.social-instagram:hover .social-layer {
+  background-color:#d6249f;
+  background-image:linear-gradient(270deg,#fdf497,#d6249f,#285aeb);
+  background-size:800% 800%;
+  animation:social-gradient 10s ease infinite;
+}
+.social-facebook:hover .social-layer {
+  background-color:#3b5998;
+  background-image:linear-gradient(270deg,#3b5998,#6293ff);
+  background-size:400% 400%;
+  animation:social-gradient 6s ease infinite;
+}
+.social-twitter:hover .social-layer {
+  background-color:#00acee;
+  background-image:linear-gradient(270deg,#4cbdff,#91d7ff);
+  background-size:400% 400%;
+  animation:social-gradient 6s ease infinite;
+}
+.social-twitch:hover .social-layer {
+  background-color:#6441a5;
+  background-image:linear-gradient(270deg,#6441a5,#b9a3e3);
+  background-size:400% 400%;
+  animation:social-gradient 6s ease infinite;
+}
+
+/* Gradient animation */
+@keyframes social-gradient {
+  0%{ background-position:0% 50%; }
+  50%{ background-position:100% 50%; }
+  100%{ background-position:0% 50%; }
+}
