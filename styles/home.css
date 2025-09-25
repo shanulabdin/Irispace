@@ -1,8 +1,12 @@
+
+
 .grid {
   display: grid;
   gap: clamp(4px, 0.5vw, 12px);
   grid-template-columns: repeat(16, minmax(35px, 1fr));
   margin-top: -1rem;
+
+  position: relative;
 }
 
 /* Square behavior: each item stays a square no matter the screen size */
@@ -35,4 +39,33 @@
   box-shadow: 0 8px 28px rgba(177, 9, 255, 0.9);
 
   transition-delay: 0s;
+}
+
+.home-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  color: #fff;
+  pointer-events: none;
+  
+  display: flex;
+  align-items: flex-end; /* ✅ aligns h2 and p at the bottom */
+  gap: 20px;            /* space between them */
+
+  width: 100%;          /* optional: give the container a width */
+
+}
+
+.home-content h2 {
+  font-size: 60px;
+  flex: 1;            /* ✅ 1 part */
+  margin-bottom: 20px;
+}
+
+.home-content p {
+  font-size: 30px;
+  flex: 1;            /* ✅ 2 parts (twice as much space) */
+  margin-bottom: 20px;
 }
