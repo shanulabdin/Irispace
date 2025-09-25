@@ -111,7 +111,7 @@
   opacity: 0;
   transform: translateY(30px);
   transition: transform 0.5s ease, opacity 0.5s ease;
-  margin-top: 86px;
+  margin-top: 90px;
   padding: 0 20px;
 }
 
