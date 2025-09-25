@@ -52,20 +52,27 @@
   
   display: flex;
   align-items: flex-end; /* ✅ aligns h2 and p at the bottom */
+  justify-content: space-between;
   gap: 20px;            /* space between them */
 
-  width: 100%;          /* optional: give the container a width */
-
+  width: 70%;          /* optional: give the container a width */
+  margin-left: 150px;
 }
 
 .home-content h2 {
-  font-size: 60px;
-  flex: 1;            /* ✅ 1 part */
-  margin-bottom: 20px;
+  font-size: 80px;
+  flex: 0.8;            /* ✅ 1 part */
+  margin-bottom: 50px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
 }
+.home-content div{
+  flex: 0.2;            /* ✅ 1 part */
 
+}
 .home-content p {
   font-size: 30px;
-  flex: 1;            /* ✅ 2 parts (twice as much space) */
-  margin-bottom: 20px;
+  flex: 0.4;            /* ✅ 2 parts (twice as much space) */
+  margin-bottom: 65px;
+  transform: translate(-150px);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
 }
