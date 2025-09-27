@@ -1,5 +1,5 @@
 #navbar{
-  /* padding: 1rem 2rem; */
+  padding: 1rem 2rem;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -16,100 +16,87 @@
   border-right: 1px solid var(--border-color);
 }
 
-.button-container{
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  flex-direction: column;
-  
 
-  background: var(--primary-color);
-  overflow: hidden;
-  padding: 1.5rem;
-}
-
-#navbar .btn{
-  margin: 1rem 0;
-  font-size: 1.5rem;
-
-  flex: 1 0 auto;
-  width: 100%;
-  text-align: center;
-
-  padding: 1.1rem 0.8rem;
-  border: none;
-  outline: none;
-  cursor: pointer;
+.fab {
   position: relative;
-  z-index: 0;
-  border-radius: 12px;
-
-  background: transparent;
+  width: 80px;
+  height: 80px;
 }
 
-#navbar .btn::after{
-  content: '';
-  position: absolute;
-  inset: 3px;
-  
-  background-color: var(--primary-color);
-
-  border-radius: inherit;
-  z-index: -1;
-}
-#navbar .btn::before{
-  content: "";
-  border-radius: inherit;
-  background: linear-gradient(
-    45deg,
-    #002bff, #7a00ff, #ff00c8,
-    #ff00c8, #7a00ff, #002bff
-  );
-  background-size: 600%;
+/* Main Button */
+#show-btn {
+  height: 80px;
+  width: 80px;
   position: absolute;
   inset: 0;
-  z-index: -2;
-  width: calc(100% + 2px);
-  height: calc(100% + 2px);
-  filter: blur(1px);
+  border: none;
+  border-radius: 40px;
+  background: #1e1f2a;
+  color: #cfcfe7;
+  cursor: pointer;
+  z-index: 2;
+  transition: transform 0.35s, background-color 0.35s, box-shadow 0.35s, color 0.35s;
+}
+#show-btn:hover,
+.fab.active #show-btn {
+  background-color: rgba(177, 9, 255, 1);
+  box-shadow: 0 0 10px 4px rgba(177, 9, 255, 0.4);
+  color: white;
+  transform: scale(1.06);
+}
 
-  transition: opacity .3s ease-in-out;
+/* When active */
+.fab.active #show-btn {
+  transform: rotate(-90deg) scale(1.06);
+}
+.fab.active .reveal-btns {
+  opacity: 1;
+  pointer-events: auto;
+}
+/* Container */
+.btns-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+/* Reveal Buttons */
+.reveal-btns {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  height: 80px;
+  width: 80px;
+  border: none;
+  border-radius: 40px;
+  background: #1e1f2a;
+  color: #cfcfe7;
+  cursor: pointer;
+  z-index: 1;
+  --y: 0px;
+  transform: translateY(var(--y));
   opacity: 0;
-  animation: none;
+  pointer-events: none;
+  transition: transform 0.35s, opacity 0.25s, background-color 0.35s, box-shadow 0.35s, color 0.35s;
 }
-
-@keyframes glowing{
-  0%{background-position: 0 0;}
-  50%{background-position: 400% 0;}
-  100%{background-position: 0 0;}
-}
-#navbar .btn:hover::before{
-  opacity: 1;
-  animation: glowing 20s linear infinite;
-}
-#navbar .btn:active::after{
-  background: transparent;
-
-}
-#navbar .btn.nav-btn-active::before{
-  opacity: 1;
-  animation: glowing 20s linear infinite;
-}
-#navbar .btn.nav-btn-active::after{
-  background: transparent;
+.reveal-btns:hover {
+  transform: translateY(var(--y)) scale(1.06);
+  background-color: rgba(177, 9, 255, 1);
+  box-shadow: 0 0 10px 4px rgba(177, 9, 255, 0.4);
+  color: white;
 }
 
 
-#navbar a{
-  text-decoration: none;
-  color: var(--text-color);
-  margin: 0 1rem;
-}
 
-#open-sidebar-button{
-  display: none;
-}
-#close-sidebar-button{
-  display: none;
-}
+/* First half (goes UP) */
+.fab.active .reveal-btns:nth-child(1) { --y: -100px; }
+.fab.active .reveal-btns:nth-child(2) { --y: -200px; }
 
+/* Second half (goes DOWN) */
+.fab.active .reveal-btns:nth-child(3) { --y: 100px; }
+.fab.active .reveal-btns:nth-child(4) { --y: 200px; }
+
+.icons { height: 30px; width: 30px; }
