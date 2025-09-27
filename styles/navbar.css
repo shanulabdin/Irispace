@@ -44,59 +44,52 @@
   color: white;
   transform: scale(1.06);
 }
-
-/* When active */
-.fab.active #show-btn {
-  transform: rotate(-90deg) scale(1.06);
-}
-.fab.active .reveal-btns {
-  opacity: 1;
-  pointer-events: auto;
-}
-/* Container */
-.btns-container {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* container centered behind the main button */
+.btns-container{
+  position: absolute; inset: 0;
+  display: flex; justify-content: center; align-items: center;
   z-index: 1;
 }
 
-/* Reveal Buttons */
-.reveal-btns {
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  height: 80px;
-  width: 80px;
-  border: none;
-  border-radius: 40px;
-  background: #1e1f2a;
-  color: #cfcfe7;
-  cursor: pointer;
-  z-index: 1;
-  --y: 0px;
+/* style anchors as buttons */
+.reveal-btns{
+  position: absolute; inset: 0; margin: auto;
+  height: 80px; width: 80px; border-radius: 40px;
+  background: #1e1f2a; color: #cfcfe7; text-decoration: none;
+  display: flex; justify-content: center; align-items: center;
+  cursor: pointer; z-index: 1;
+
+  --y: 0px;                      /* offset var */
   transform: translateY(var(--y));
-  opacity: 0;
-  pointer-events: none;
-  transition: transform 0.35s, opacity 0.25s, background-color 0.35s, box-shadow 0.35s, color 0.35s;
+  opacity: 0; pointer-events: none;
+  transition: transform .35s, opacity .25s,
+              background-color .35s, box-shadow .35s, color .35s;
 }
-.reveal-btns:hover {
+.reveal-btns:hover{
   transform: translateY(var(--y)) scale(1.06);
   background-color: rgba(177, 9, 255, 1);
   box-shadow: 0 0 10px 4px rgba(177, 9, 255, 0.4);
   color: white;
 }
 
+/* show state */
+.fab.active .reveal-btns{ opacity: 1; pointer-events: auto; }
 
+/* split: up for first half, down for second half */
+.fab.active .btns-container > a:nth-child(1){ --y: -100px; }
+.fab.active .btns-container > a:nth-child(2){ --y: -200px; }
+.fab.active .btns-container > a:nth-child(3){ --y:  100px; }
+.fab.active .btns-container > a:nth-child(4){ --y:  200px; }
 
-/* First half (goes UP) */
-.fab.active .reveal-btns:nth-child(1) { --y: -100px; }
-.fab.active .reveal-btns:nth-child(2) { --y: -200px; }
+/* rotate + keep hover look when active */
+#show-btn{ transition: transform .35s, background-color .35s, box-shadow .35s, color .35s; }
+#show-btn:hover,
+.fab.active #show-btn{
+  background-color: rgba(177, 9, 255, 1);
+  box-shadow: 0 0 10px 4px rgba(177, 9, 255, 0.4);
+  color: white;
+  transform: scale(1.06);
+}
+.fab.active #show-btn{ transform: rotate(90deg) scale(1.06); }
 
-/* Second half (goes DOWN) */
-.fab.active .reveal-btns:nth-child(3) { --y: 100px; }
-.fab.active .reveal-btns:nth-child(4) { --y: 200px; }
-
-.icons { height: 30px; width: 30px; }
+.icons{ width: 30px; height: 30px; }

@@ -18,31 +18,20 @@
 </head>
 <body>
 
-  <!-- Open sidebar button -->
-  <button id="open-sidebar-button" onclick="openSidebar()">
-    <ion-icon class="nav-icons" name="menu"></ion-icon>
-  </button>
+  <nav id="navbar">
+    <div class="fab">
+      <button id="show-btn">
+        <ion-icon class="icons" name="menu-outline"></ion-icon>
+      </button>
 
-  <!-- Sidebar nav -->
-<nav id="navbar">
-  <div class="fab">
-    <button id="show-btn">
-      <ion-icon class="icons" name="menu-outline"></ion-icon>
-    </button>
-
-    <div class="btns-container">
-      <button class="reveal-btns"><ion-icon class="icons" name="images-outline"></ion-icon></button>
-      <button class="reveal-btns"><ion-icon class="icons" name="home-outline"></ion-icon></button>
-      <button class="reveal-btns"><ion-icon class="icons" name="chatbubbles-outline"></ion-icon></button>
-      <button class="reveal-btns"><ion-icon class="icons" name="at-outline"></ion-icon></button>
+      <div class="btns-container">
+        <a href="#skills"  class="reveal-btns"><ion-icon class="icons" name="images-outline"></ion-icon></a>
+        <a href="#home"    class="reveal-btns"><ion-icon class="icons" name="home-outline"></ion-icon></a>
+        <a href="#blog"    class="reveal-btns"><ion-icon class="icons" name="chatbubbles-outline"></ion-icon></a>
+        <a href="#socials" class="reveal-btns"><ion-icon class="icons" name="at-outline"></ion-icon></a>
+      </div>
     </div>
-  </div>
-</nav>
-
-
-
-  <!-- Overlay -->
-  <div id="overlay" onclick="closeSidebar()"></div>
+  </nav>
 
   <!-- Main content -->
   <main>
