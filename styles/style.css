@@ -32,11 +32,6 @@ section{
   padding: min(5em, 7%);
 }
 
-
-/* main{
-  padding-top: var(--nav-height);
-} */
-
 main p{
   margin-top: .35em;
 }
