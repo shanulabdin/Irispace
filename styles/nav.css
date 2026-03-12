@@ -1,0 +1,93 @@
+/* Navigation */
+.nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	padding: 20px 0;
+	transition: all 0.4s ease;
+}
+
+.nav.scrolled {
+	background: rgba(15, 14, 12, 0.95);
+	backdrop-filter: blur(20px);
+	padding: 14px 0;
+	border-bottom: 1px solid var(--border-color);
+}
+
+.nav-inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logo {
+	font-family: "Manrope", sans-serif;
+	font-size: 28px;
+	font-weight: 600;
+	color: var(--orange-light);
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+}
+
+.logo span {
+	color: var(--text-primary);
+	font-weight: 400;
+}
+
+.nav-links {
+	display: flex;
+	gap: 2rem;
+	list-style: none;
+	position: relative;
+	z-index: 10;
+}
+
+.nav-link {
+	text-decoration: none;
+	font-family: "Manrope", sans-serif;
+	font-weight: 600;
+	font-size: 16px;
+	text-transform: uppercase;
+	color: var(--text-secondary);
+	display: inline-flex;
+	/* Keeps spans in a row */
+	overflow: hidden;
+	/* Important: Hide the letters as they roll out */
+	height: 1.2em;
+	line-height: 1.2em;
+
+	pointer-events: auto !important;
+	cursor: pointer;
+}
+
+/* Individual letter styling */
+.nav-link span {
+	position: relative;
+	display: inline-block;
+	transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+	transition-delay: calc(var(--i) * 0.02s);
+	/* Stagger effect */
+}
+
+/* The rolling clone */
+.nav-link span::after {
+	content: attr(data-letter);
+	position: absolute;
+	top: 100%;
+	left: 0;
+	color: var(--orange-light);
+	/* The color it turns into on hover */
+}
+
+/* Hover state: Both letters slide up */
+.nav-link:hover span {
+	transform: translateY(-100%);
+}
+
+.nav-cta {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}

@@ -1,87 +1,572 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Irispace</title>
-
-  <link rel="stylesheet" href="styles/style.css">
-  <link rel="stylesheet" href="styles/navbar.css">
-  <link rel="stylesheet" href="styles/home.css">
-  <link rel="stylesheet" href="styles/skills.css">
-  <link rel="stylesheet" href="styles/blog.css">
-  <link rel="stylesheet" href="styles/socials.css">
-
-  <script src="scripts/home.js" defer></script>
-  <script src="scripts/navbar.js" defer></script>
-  <script src="scripts/skills.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shan Ul Abdin - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Libre+Franklin:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/nav.css">
+    <link rel="stylesheet" href="styles/menu.css">
+    <link rel="stylesheet" href="styles/hero.css">
+    <link rel="stylesheet" href="styles/services.css">
+    <link rel="stylesheet" href="styles/projects.css">
+    <link rel="stylesheet" href="styles/process.css">
+    <link rel="stylesheet" href="styles/testimonials.css">
+    <link rel="stylesheet" href="styles/trust.css">
+    <link rel="stylesheet" href="styles/cta.css">
+    <link rel="stylesheet" href="styles/contact.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/scrollbar.css">
+    <link rel="stylesheet" href="styles/cursor.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
 
-  <nav id="navbar">
-    <div class="fab">
-      <button id="show-btn">
-        <ion-icon class="icons" name="menu-outline"></ion-icon>
-      </button>
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="#" class="logo">Shan</a>
+                <ul class="nav-links">
+                    <!-- <li><a class="nav-link" href="#services">Services</a></li> -->
+                    <li><a class="nav-link" href="#projects">What I'm Building</a></li>
+                    <li><a class="nav-link" href="#process">Process</a></li>
+                    <li><a class="nav-link" href="#testimonials">Feedback</a></li>
+                    <li><a class="nav-link" href="#contact">Let's Talk</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="#projects" class="btn btn-outline">View Work</a>
+                    <!-- <a href="#contact" class="btn btn-primary">Connect</a> -->
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
 
-      <div class="btns-container">
-        <a href="#skills"  class="reveal-btns"><ion-icon class="icons" name="images-outline"></ion-icon></a>
-        <a href="#home"    class="reveal-btns"><ion-icon class="icons" name="home-outline"></ion-icon></a>
-        <a href="#blog"    class="reveal-btns"><ion-icon class="icons" name="chatbubbles-outline"></ion-icon></a>
-        <a href="#socials" class="reveal-btns"><ion-icon class="icons" name="at-outline"></ion-icon></a>
-      </div>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close Menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <ul class="mobile-nav-links">
+            <!-- <li><a href="#services">Services</a></li> -->
+            <li><a href="#projects">What I'm Building</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#testimonials">Feedback</a></li>
+            <li><a href="#contact">Let's Talk</a></li>
+        </ul>
+
+        <div class="mobile-menu-cta">
+            <a href="#projects" class="btn btn-outline">View Work</a>
+            <a href="#contact" class="btn btn-primary">Get in Touch</a>
+        </div>
     </div>
-  </nav>
 
-  <!-- Main content -->
-  <main>
-    <section id="home">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-title">
+                        I&nbsp;Make
+                        <span class="changing-wrapper">
+                            <span class="scroll-text gold" id="scroll-text">
+                                <span>Websites</span>
+                                <span>Apps</span>
+                                <span>Videos</span>
+                            </span>
+                        </span>
+                    </div>
 
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="image-card">
+                        <div class="image-stack" id="image-stack">
+                            <img src="images/website.png" />
+                            <img src="images/app2.png" />
+                            <img src="images/youtube.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="skills">
+    <!-- Why Gold Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="why-grid">
+                <div class="why-content">
+                    <div class="section-label">About Me</div>
+                    <h2 class="section-title">Myself</h2>
 
+                    <ul class="why-list">
+                        <li class="why-item">
+                            <span class="why-number">01</span>
+                            <div class="why-text">
+                                <h4>Student</h4>
+                                <p>Currently pursuing a degree in Computer Science at Iqra University, Karachi.</p>
+                            </div>
+                        </li>
+
+                        <li class="why-item">
+                            <span class="why-number">02</span>
+                            <div class="why-text">
+                                <h4>App Developer</h4>
+                                <p>Ever since I was a child, I've wanted to create something that would be used by
+                                    everyone.
+                                    App development is my way of turning that childhood dream into reality.</p>
+                            </div>
+                        </li>
+
+                        <li class="why-item">
+                            <span class="why-number">03</span>
+                            <div class="why-text">
+                                <h4>Content Creator</h4>
+                                <p>I create content exploring science, philosophy, and personal growth for a general
+                                    audience.</p>
+                            </div>
+                        </li>
+
+                        <li class="why-item">
+                            <span class="why-number">04</span>
+                            <div class="why-text">
+                                <h4>Freelancer</h4>
+                                <p>I design and develop premium business websites, landing pages, and portfolio
+                                    platforms.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="why-visual">
+                    <div class="why-image-grid">
+                        <div class="why-thumb">
+                            <img src="images/youtube.png" alt="Website Project">
+                        </div>
+                        <div class="why-thumb">
+                            <img src="images/website.png" alt="Landing Page">
+                        </div>
+                        <div class="why-thumb">
+                            <img src="images/project-7.png" alt="Business Website">
+                        </div>
+                        <div class="why-thumb">
+                            <img src="images/app.png" alt="Website Redesign">
+                        </div>
+                        <div class="why-thumb">
+                            <img src="images/app3.png" alt="Optimized Website">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="blog">
+    <!-- Products Section -->
+    <section class="products" id="process">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">My Process</div>
+                <h2 class="section-title">How I Build</h2>
+                <p class="section-desc">
+                    My personal workflow for turning ideas into functional, useful products.
+                </p>
+            </div>
 
+            <div class="products-tabs">
+                <button class="tab-btn" data-tab="step1">
+                    <span class="tab-title">Discover</span>
+                    <div class="tab-content">
+                        <h3 class="product-name">Understanding Your Vision</h3>
+                        <p class="product-description">I start with a real problem and validate whether the solution is
+                            worth building.</p>
+                    </div>
+                </button>
+
+                <button class="tab-btn" data-tab="step2">
+                    <span class="tab-title">Design</span>
+                    <div class="tab-content">
+                        <h3 class="product-name">Wireframe & UI Design</h3>
+                        <p class="product-description">Simple, clean UI with clarity and usability as the priority.
+                        </p>
+                    </div>
+                </button>
+
+                <button class="tab-btn" data-tab="step3">
+                    <span class="tab-title">Develope</span>
+                    <div class="tab-content">
+                        <h3 class="product-name">Develope and Optimize</h3>
+                        <p class="product-description">Develope with performance, scalability, and long-term usability in mind.</p>
+                    </div>
+                </button>
+
+                <button class="tab-btn" data-tab="step4">
+                    <span class="tab-title">Deploy</span>
+                    <div class="tab-content">
+                        <h3 class="product-name">Launch & Iterate</h3>
+                        <p class="product-description">Ship fast. Improve continuously. Make it better with real feedback.</p>
+                    </div>
+                </button>
+            </div>
+
+        </div>
     </section>
 
-    <section id="socials">
-      <ul class="social-list">
-        <li class="social-item">
-          <a class="social-link social-instagram" target="_blank" href="https://instagram.com/">
-            <span class="social-layer"></span>
-            <span class="social-layer"></span>
-            <span class="social-layer"></span>
-            <span class="social-layer"></span>
-            <div class="social-icon fa-brands fa-instagram"></div>
-          </a>
-        </li>
-        <li class="social-item">
-          <a class="social-link social-facebook" target="_blank" href="https://www.facebook.com/">
-            <span class="social-layer"></span>
-            <span class="social-layer"></span>
-            <span class="social-layer"></span>
-            <span class="social-layer"></span>
-            <div class="social-icon fa-brands fa-facebook-f"></div>
-          </a>
-        </li>
-        <li class="social-item">
-          <a class="social-link social-twitter" target="_blank" href="https://x.com">
-            <span class="social-layer"></span>
-            <span class="social-layer"></span>
-            <span class="social-layer"></span>
-            <span class="social-layer"></span>
-            <div class="social-icon fa-brands fa-twitter"></div>
-          </a>
-        </li>
-      </ul>
-    </section>
-  </main>
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Client Testimonials</div>
+                <h2 class="section-title">What My Clients Say</h2>
+            </div>
 
-  <!-- Ionicons -->
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+            <div class="testimonials-wrapper">
+                <div class="testimonials-slider">
+                    <div class="testimonials-track" id="testimonialsTrack">
+
+                        <div class="testimonial-item">
+                            <p class="testimonial-text">
+                                "Working with Shan was an amazing experience. He understood exactly what I wanted and
+                                delivered a sleek, professional website that truly represents my brand."
+                            </p>
+                            <div class="testimonial-author">
+                                <span class="author-name">Ayesha Khan</span>
+                                <span class="author-title">Business Owner</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-item">
+                            <p class="testimonial-text">
+                                "Our website now looks modern and trustworthy. The design is clean and loads fast. We've
+                                already seen more inquiries from potential customers."
+                            </p>
+                            <div class="testimonial-author">
+                                <span class="author-name">Ahmed Raza</span>
+                                <span class="author-title">Marketing Manager</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-item">
+                            <p class="testimonial-text">
+                                "He redesigned our outdated website into something that actually converts visitors into
+                                leads. Highly recommended for anyone serious about their online presence."
+                            </p>
+                            <div class="testimonial-author">
+                                <span class="author-name">Fatima Ali</span>
+                                <span class="author-title">Entrepreneur</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-item">
+                            <p class="testimonial-text">
+                                "Professional, responsive, and detail-oriented. Shan made the entire process simple and
+                                stress-free from start to finish."
+                            </p>
+                            <div class="testimonial-author">
+                                <span class="author-name">Usman Tariq</span>
+                                <span class="author-title">Startup Founder</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="testimonial-nav">
+                    <button class="testimonial-arrow prev" id="testimonialPrev" aria-label="Previous testimonial">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    <button class="testimonial-arrow next" id="testimonialNext" aria-label="Next testimonial">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="testimonial-dots" id="testimonialDots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="trust">
+        <div class="container">
+            <div class="trust-grid">
+
+                <div class="trust-item">
+                    <div class="trust-logo">HTML5/CSS3</div>
+                </div>
+
+                <div class="trust-item">
+                    <div class="trust-logo">JavaScript</div>
+                </div>
+
+                <div class="trust-item">
+                    <div class="trust-logo">TypeScript</div>
+                </div>
+
+                <div class="trust-item">
+                    <div class="trust-logo">React</div>
+                </div>
+
+                <div class="trust-item">
+                    <div class="trust-logo">ReactNative</div>
+                </div>
+
+                <div class="trust-item">
+                    <div class="trust-logo">Expo</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-inner">
+                <h2 class="cta-title">Let's Build Something <span class="gold">Meaningful</span></span> Today</h2>
+                <p class="cta-desc">
+                    Whether it's an app idea, collaboration, or just a conversation about building cool tools, I'm
+                    always open.
+                </p>
+                <div class="cta-actions">
+                    <!-- <a href="#contact" class="btn btn-primary">Get a Free Consultation</a> -->
+                    <a href="#contact" class="btn btn-outline">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="section-label">Get In Touch</div>
+                    <h3>Have an idea, collaboration, or opportunity in mind?</h3>
+                    <p>
+                        I'm always open to conversations about building useful products and creative projects.</p>
+                    <ul class="contact-details">
+                        <li>
+                            <div class="contact-icon">
+                                <ion-icon name="call-outline"></ion-icon>
+                            </div>
+                            <div class="contact-text">
+                                <div class="contact-label">Phone</div>
+                                <div class="contact-value">+92 (800) 555-SHAN</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon">
+                                <ion-icon name="mail-outline"></ion-icon>
+                            </div>
+                            <div class="contact-text">
+                                <div class="contact-label">Email</div>
+                                <div class="contact-value">muhammadshanulabedeen@gmail.com</div>
+                            </div>
+                        </li>
+                        <!-- <li>
+                            <div class="contact-icon">
+                                <ion-icon name="location-outline"></ion-icon>
+                            </div>
+                            <div class="contact-text">
+                                <div class="contact-label">Showroom</div>
+                                <div class="contact-value">350 Fifth Avenue, Suite 4800<br>New York, NY 10118</div>
+                            </div>
+                        </li> -->
+                        <li>
+                            <div class="contact-icon">
+                                <ion-icon name="time-outline"></ion-icon>
+                            </div>
+                            <div class="contact-text">
+                                <div class="contact-label">Business Hours</div>
+                                <div class="contact-value">
+                                    Mon - Fri: 9:00 AM - 6:00 PM EST<br>
+                                    Sat: 10:00 AM - 2:00 PM EST
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xeelrljn" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">First Name</label>
+                                <input type="text" class="form-input" name="first_name" placeholder="John" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="form-input" name="last_name" placeholder="Smith" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="form-input" name="email" placeholder="john@example.com"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" class="form-input" name="phone" placeholder="+1 (555) 000-0000">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">I'm interested in</label>
+                            <select name="service" class="form-select" required>
+                                <option value="">Select an option</option>
+                                <option value="website">Website Design</option>
+                                <option value="landing">Landing Page</option>
+                                <option value="wordpress">Mobile App</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-textarea" name="message"
+                                placeholder="Tell me something about your dream website..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">Shan <span>Portfolio</span></a>
+                    <p>App developer and creator focused on building useful digital tools. <br>
+                        Currently learning, building, and working toward creating something that truly matters.</p>
+                    <p style="margin-top: 16px;">
+                        Connect with me on
+                        <a href="https://www.linkedin.com/in/shan-ul-abdin-23a00a3a7/" target="_blank"
+                            class="gold" >LinkedIn</a>
+                        or
+                        <a href="https://github.com/shanulabdin" target="_blank"
+                            class="gold" >GitHub</a>.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Website Design</a></li>
+                        <li><a href="#services">Landing Pages</a></li>
+                        <li><a href="#services">Mobile App</a></li>
+                        <li><a href="#contact">Consultation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Portfolio</h4>
+                    <ul class="footer-links">
+                        <li><a href="#projects">Web Projects</a></li>
+                        <li><a href="#testimonials">Client Reviews</a></li>
+                        <li><a href="#contact">Get in Touch</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:muhammadshanulabedeen@gmail.com">Email Me</a></li>
+                        <!-- https://www.instagram.com/shantist._ -->
+                        <li><a href="" target="_blank">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com/in/shan-ul-abdin-23a00a3a7/" target="_blank">LinkedIn</a>
+                        </li>
+                        <li><a href="https://github.com/shanulabdin" target="_blank">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="container">
+
+            <div class="footer-bottom">
+                <p class="footer-copy">&copy; 2026 Shan. All rights reserved.
+                </p>
+                <div class="footer-socials">
+                    <!-- https://www.instagram.com/shantist._ -->
+                    <a href="" target="_blank" class="social-link">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                    <!-- https://www.youtube.com/@Shant1st -->
+                    <a href="" target="_blank" class="social-link">
+                        <ion-icon name="logo-youtube"></ion-icon>
+                    </a>
+                    <a href="https://www.linkedin.com/in/shan-ul-abdin-23a00a3a7/" target="_blank" class="social-link">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
+                    <a href="https://github.com/shanulabdin" target="_blank" class="social-link">
+                        <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/navLink.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/cursor.js"></script>
+    <script src="scripts/hero.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.4/pixi.min.js"></script>
+
+    <script type="module">
+        import Lenis from 'https://unpkg.com/lenis@1.1.18/dist/lenis.mjs'
+
+        let lenis;
+
+        if (window.innerWidth > 900) {
+            lenis = new Lenis();
+
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+
+            requestAnimationFrame(raf);
+        }
+    </script>
 </body>
+
 </html>

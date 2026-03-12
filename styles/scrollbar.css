@@ -1,0 +1,23 @@
+/* 1. The entire scrollbar area */
+::-webkit-scrollbar {
+  width: 12px;               /* Width of vertical scrollbar */
+  height: 2px;              /* Height of horizontal scrollbar */
+}
+
+/* 2. The track (the background) */
+::-webkit-scrollbar-track {
+  background: var(--bg-dark); 
+  border-radius: 10px;
+}
+
+/* 3. The thumb (the part you grab) */
+::-webkit-scrollbar-thumb {
+  background: var(--orange-primary);
+  border-radius: 10px;
+  border: 2px solid var(--bg-dark); /* Creates a "gap" around the thumb */
+}
+
+/* 4. Hover effect on the thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--orange-light);
+}
