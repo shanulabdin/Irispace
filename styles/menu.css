@@ -145,7 +145,7 @@
 .btn-primary:hover {
 	background: linear-gradient(135deg, var(--orange-light) 0%, var(--orange-primary) 100%);
 	transform: translateY(-2px);
-	box-shadow: 0 8px 30px rgba(184, 134, 11, 0.3);
+	box-shadow: 0 8px 30px rgba(129, 11, 184, 0.3);
 }
 
 .mobile-menu-btn {
